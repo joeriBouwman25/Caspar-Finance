@@ -1,0 +1,40 @@
+{
+  "name": "Caspar Finance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "webshop"
+  ],
+  "author": "J. Bouwman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joeriBouwman25/Guitar-website/issues"
+  },
+  "homepage": "https://github.com/joeriBouwman25/Guitar-website#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.12.5",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-handlebars-paginate": "^1.0.3",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.14",
+    "multer": "^1.4.2"
+  }
+}
