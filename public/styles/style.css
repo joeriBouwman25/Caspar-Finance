@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1e1e1e;
+  background-color: var(--background-color);
 }
 
 a {
@@ -16,6 +16,33 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+:root {
+  --background-color: #ffffff;
+  --background-color-gray: #bbbaab;
+  --background-gradient: #00000059;
+  --background-gradient2: transparent 58%;
+
+  --text: #1e1e1e;
+  --headings: #be9d68;
+  --highLights: #f6f2c0;
+  --link: #364b91;
+}
+
+/* darkmode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1e1e1e;
+    --background-color-gray: #bbbaab;
+    --background-gradient: transparent;
+    --background-gradient2: transparent;
+
+    --text: #dddddd;
+    --headings: #be9d68;
+    --highLights: #f6f2c0;
+    --link: #f6f2c0;
+  }
 }
 
 /******************/
@@ -38,12 +65,6 @@ header nav a {
 header nav img {
   height: 5em;
   width: auto;
-}
-
-header nav h1 {
-  font-size: 1.2em;
-  text-align: center;
-  color: #08464e;
 }
 
 header nav button {
@@ -105,12 +126,6 @@ header nav ul li a:hover {
   color: #f6f2c0;
 }
 
-/************************/
-/************************/
-/** MAIN FIRST SECTION **/
-/************************/
-/************************/
-
 .layOver {
   position: absolute;
   top: 0;
@@ -119,6 +134,20 @@ header nav ul li a:hover {
   right: 0;
   background-color: rgb(0 0 0 / 30%);
   z-index: 5;
+}
+
+/************************/
+/************************/
+/** MAIN FIRST SECTION **/
+/************************/
+/************************/
+
+main {
+  background-image: linear-gradient(
+    274deg,
+    var(--background-gradient),
+    var(--background-gradient2)
+  );
 }
 
 section:first-of-type article:first-of-type {
@@ -134,7 +163,7 @@ section:first-of-type p {
   font-size: 1.2em;
   line-height: 28px;
   max-width: 20em;
-  min-width: 17em;
+  min-width: 20em;
   text-align: center;
   text-shadow: 1px 1px 2px black;
   opacity: 0;
@@ -153,7 +182,7 @@ section:first-of-type button {
   width: 10em;
   height: 4em;
   background-color: #be9d68;
-  box-shadow: 1px 1px 8px black;
+  box-shadow: 0px 3px 6px #0000004d;
   border: none;
   border-radius: 20px;
   opacity: 0;
@@ -172,6 +201,7 @@ section:first-of-type img {
   width: 100%;
   height: 18em;
   object-fit: cover;
+  object-position: bottom;
   animation-name: banner;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -215,7 +245,7 @@ section:nth-of-type(2) article p {
   border-width: 80%;
   font-size: 1em;
   max-width: 30em;
-  color: #dddddd;
+  color: var(--text);
 }
 
 section:nth-of-type(2) article p span {
@@ -260,24 +290,52 @@ section:nth-of-type(2) article img:nth-of-type(2):hover {
 
 footer {
   display: flex;
-  justify-content: center;
-  height: 13em;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer article {
+  margin: 2em;
+}
+
+footer h3 {
+  color: var(--headings);
+  margin-bottom: 0.7em;
 }
 
 footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-end;
   height: 100%;
   max-width: 38em;
 }
 
 footer ul li {
-  margin: 0.5em;
   color: #bbbaab;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 1em;
+  font-weight: 200;
+  text-align: start;
+  max-width: 17em;
+  min-width: 16em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5em 0 0.5em 0;
+}
+
+footer ul li i {
+  margin-right: 1em;
+  width: 17px;
+  color: var(--headings);
+}
+
+footer ul li a {
+  color: var(--link);
+}
+
+footer > a {
+  color: var(--link);
+  margin: 1em 0 4em 0;
+  font-weight: 100;
+  font-size: 14px;
 }
 /****************/
 /****************/
@@ -325,6 +383,26 @@ footer ul li {
     bottom: 2.5em;
     left: 19.5em;
   }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 50em;
+    margin: 0 auto;
+  }
+
+  footer i {
+    color: var(--headings);
+  }
+
+  footer > a {
+    color: var(--link);
+    margin: 1em auto 4em auto;
+    font-weight: 100;
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 65em) {
@@ -363,7 +441,7 @@ footer ul li {
   header nav img {
     width: auto;
     height: 6em;
-    margin-right: 25em;
+    margin-right: 5em;
   }
 
   header nav ul {
@@ -407,7 +485,7 @@ footer ul li {
   }
 
   header nav ul li a {
-    color: #dddddd;
+    color: var(--text);
     font-size: 1.2em;
   }
 

@@ -1,9 +1,9 @@
 const getIndex = (req, res) => {
     res.render('home', {
         style: '/styles/style.css',
-        img1: '/images/books.jpg',
-        img2: '/images/homepagina banner.jpg',
-        img3: '/images/papier.jpg'    
+        img1: '/images/multi.jpg',
+        img2: '/images/notes.jpg',
+        img3: '/images/papier2.jpg'    
     })
 }
 

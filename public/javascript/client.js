@@ -15,28 +15,28 @@ hamburgerButton.addEventListener('click', () => {
     layOver.classList.toggle('layOver')
 })
 
-const test = () => {
+const bannerAnimation = () => {
     if(bannerImage)
     setInterval(() => {
         bannerImage.onload = () => {
             headingOne.classList.add('onload')
             dienstenButton.classList.add('onload')
         }
-        if (bannerImage.getAttribute('src') === '/images/books.jpg'){
-            bannerImage.src = '/images/homepagina banner.jpg'
-            headingOne.innerHTML = 'Direct <a href="#">financieel advies</a> nodig? Neem dan contact met ons op.'
+        if (bannerImage.getAttribute('src') === '/images/multi.jpg'){
+            bannerImage.src = '/images/notes.jpg'
+            headingOne.innerHTML = 'Direct <a href="/contact">financieel advies</a> nodig? Neem dan contact met ons op.'
             buttbutt.innerHTML = "Contact"
             headingOne.classList.remove('onload')
             dienstenButton.classList.remove('onload')
-        } else if (bannerImage.getAttribute('src') === '/images/homepagina banner.jpg') {
-            bannerImage.src = '/images/papier.jpg'
-            headingOne.innerHTML = 'Wilt u meer over onze <a href="#">prijzen en tarieven</a> weten?'
+        } else if (bannerImage.getAttribute('src') === '/images/notes.jpg') {
+            bannerImage.src = '/images/papier2.jpg'
+            headingOne.innerHTML = 'Meer weten over onze <a href="/tarieven">tarieven</a>?'
             buttbutt.innerHTML = "Tarieven"
             headingOne.classList.remove('onload')
             dienstenButton.classList.remove('onload')
         } else {
-            bannerImage.src = '/images/books.jpg'
-            headingOne.innerHTML = 'Bent u benieuwd welke financieele diensten <a href="#">Caspar Finance</a> biedt??'
+            bannerImage.src = '/images/multi.jpg'
+            headingOne.innerHTML = 'Bent u benieuwd welke financieele diensten <a href="/diensten">Caspar Finance</a> biedt?'
             buttbutt.innerHTML = "Diensten"
             headingOne.classList.remove('onload')
             dienstenButton.classList.remove('onload')
@@ -45,7 +45,7 @@ const test = () => {
 }
 
 if(bannerImage){
-    bannerImage.addEventListener('animationend', test)
+    bannerImage.addEventListener('animationend', bannerAnimation)
 }
 
 
@@ -54,30 +54,8 @@ window.onload = () => {
     if(dienstenButton)
         headingOne.classList.add('onload')
         dienstenButton.classList.add('onload')
-    // setInterval(() => {
-    //     bannerImage.onload = () => {
-    //         headingOne.classList.add('onload')
-    //         dienstenButton.classList.add('onload')
-    //     }
-    //     if (bannerImage.getAttribute('src') === '/images/books.jpg'){
-    //         bannerImage.src = '/images/homepagina banner.jpg'
-    //         headingOne.innerHTML = 'Direct financil advies nodig?'
-    //         dienstenButton.innerHTML = "Contact"
-    //         headingOne.classList.remove('onload')
-    //         dienstenButton.classList.remove('onload')
-    //     } else if (bannerImage.getAttribute('src') === '/images/homepagina banner.jpg') {
-    //         bannerImage.src = '/images/papier.jpg'
-    //         headingOne.innerHTML = 'Bent u benieuwd naar onze prijzen?'
-    //         dienstenButton.innerHTML = "Tarieven"
-    //         headingOne.classList.remove('onload')
-    //         dienstenButton.classList.remove('onload')
-    //     } else {
-    //         bannerImage.src = '/images/books.jpg'
-    //         headingOne.classList.remove('onload')
-    //         dienstenButton.classList.remove('onload')
-    //     }
-    // }, 5000)
 }
+
 
 
 
