@@ -22,7 +22,7 @@ app
 
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
-  .use(express.static('public'))
+  .use(express.static('public_html'))
   .use(indexRoutes)
   .listen(port, console.log('Server running!🎉'))
   
